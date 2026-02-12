@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>San Valentín OSA💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        overflow: hidden;
+        color: white;
+        text-align: center;
+      }
+
+      /* ❤️ Corazones */
+      .heart {
+        position: fixed;
+        top: -20px;
+        font-size: 20px;
+        animation: fall linear forwards;
+        pointer-events: none;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh);
+          opacity: 0;
+        }
+      }
+
+      /* 🧩 Pasos */
+      .step {
+        display: none;
+        min-height: 100vh;
+        padding: 40px 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .step.active {
+        display: flex;
+      }
+
+      /* 🐻 */
+      .bear {
+        font-size: 80px;
+        animation: bounce 2s infinite;
+      }
+      .step h1 {
+        color: #c44569;
+        font-size: 4rem;
+        line-height: 1;
+        letter-spacing: 3px;
+        font-family: fantasy;
+      }
+      .step h2 {
+        color: #9b3a5e;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* 💌 Caja */
+      .box {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 25px;
+        border-radius: 20px;
+        max-width: 420px;
+      }
+
+      /* 🔘 Botones */
+      button {
+        margin-top: 25px;
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        background: #ff4b7d;
+        color: white;
+      }
+      .buttons {
+        margin-top: 20px;
+        position: relative;
+        height: 120px;
+      }
+      #no {
+        background: #777;
+        position: absolute;
+        left: 60%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- PASO 0 -->
+    <div class="step active">
+      <div class="bear">🐻💖🐻‍❄️</div>
+      <h1>Feliz San Valentín Osa</h1>
+      <h2>Holi mi niña bonita, te preparé un detalle.</h2>
+      <p>¿Quieres verlo? 💕</p>
+      <button onclick="nextStep()">Continuemos</button>
+    </div>
+
+    <!-- PASO 1 -->
+    <div class="step">
+      <div class="bear">🐻💖🐻‍❄️</div>
+      <h1>Te Quiero mucho</h1>
+      <p>¿Seguimos? 💕</p>
+      <button onclick="nextStep()">Continuar</button>
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="step">
+      <div class="bear">🐻📸🐻</div>
+      <div class="box">
+        <p>Un recuerdo bonito contigo 💖</p>
+        <img
+          src="https://via.placeholder.com/350x200"
+          style="width: 100%; border-radius: 15px"
+        />
+      </div>
+      <button onclick="nextStep()">Siguiente</button>
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="step">
+      <div class="bear">🐻💌🐻</div>
+      <div class="box">
+        <h2>¿Tienes una cita conmigo este lunes?</h2>
+        <div class="buttons">
+          <button onclick="accept()">💖 Sí 💖</button>
+          <button id="no">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PASO 4 -->
+    <div class="step">
+      <div class="bear">🐻❤️🐻</div>
+      <div class="box">
+        <h2>Nuestra cita ✨</h2>
+        📍 Restaurante especial 🍷<br />
+        📅 Lunes<br />
+        ⏰ 21:00<br /><br />
+        Te espero 💕
+      </div>
+    </div>
+
+    <script>
+      /* ❤️ Corazones */
+      setInterval(() => {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "❤️";
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.animationDuration = 3 + Math.random() * 3 + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 6000);
+      }, 250);
+
+      /* 🧩 Pasos */
+      let current = 0;
+      const steps = document.querySelectorAll(".step");
+
+      function nextStep() {
+        steps[current].classList.remove("active");
+        current++;
+        steps[current].classList.add("active");
+      }
+
+      /* 😈 Botón NO */
+      document.addEventListener("DOMContentLoaded", () => {
+        const no = document.getElementById("no");
+        no.addEventListener("mouseover", move);
+        no.addEventListener("click", move);
+
+        function move() {
+          no.style.left = Math.random() * 70 + "%";
+          no.style.top = Math.random() * 80 + "px";
+        }
+      });
+
+      /* 💖 Sí */
+      function accept() {
+        nextStep();
+      }
+    </script>
+  </body>
+</html>
