@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <title>San Valentín OSA💖</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <style>
       body {
         margin: 0;
         font-family: Arial, sans-serif;
         background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        overflow: hidden;
         color: white;
         text-align: center;
       }
@@ -97,45 +97,130 @@
         position: absolute;
         left: 60%;
       }
+      .img_estrellas{
+        filter:blur(20px)
+      }
     </style>
   </head>
 
   <body>
     <!-- PASO 0 -->
     <div class="step active">
-      <div class="bear">🐻💖🐻‍❄️</div>
+      <div class="bear">🐻‍❄️💖🐻</div>
       <h1>Feliz San Valentín Osa</h1>
-      <h2>Holi mi niña bonita, te preparé un detalle.</h2>
-      <p>¿Quieres verlo? 💕</p>
-      <button onclick="nextStep()">Continuemos</button>
+      <h2>¡¡SOOORPREESAAA!!</h2>
+      <p>Tengo algo para ti, ¿Quieres verlo? 💕</p>
+      <button onclick="nextStep()">Continuemos 💗​</button>
     </div>
 
     <!-- PASO 1 -->
     <div class="step">
-      <div class="bear">🐻💖🐻‍❄️</div>
-      <h1>Te Quiero mucho</h1>
-      <p>¿Seguimos? 💕</p>
+      <div class="bear">🐻‍❄️💖🐻</div>
+      <h1>TU Y YO</h1>
+      <h2>Tú, mi persona favorita.</h2>
+      <p>
+        Mi niña hermosa, te preparé este pequeño detalle para recordarte lo importante que eres para mí. Aquí estamos los dos: tú, mi osita polar, 
+        tan blanquita y preciosa; y yo, tu oso pardo, siempre a tu lado. Juntos hacemos la pareja más bonita, 
+      porque nos complementamos perfecto. 🐻🐻‍❄️
+        </p>
+      </p>
       <button onclick="nextStep()">Continuar</button>
     </div>
 
     <!-- PASO 2 -->
     <div class="step">
-      <div class="bear">🐻📸🐻</div>
+      <div class="bear">💖📸💖</div>
+      <h2>Un día super especial.</h2>
       <div class="box">
-        <p>Un recuerdo bonito contigo 💖</p>
-        <img
-          src="https://via.placeholder.com/350x200"
+        <img id="img_estrellas" class="img_estrellas" onclick="fn_pulsa_foto_luna()"
+          src="./luna_estrellas.png"
           style="width: 100%; border-radius: 15px"
         />
+        <p id="mensaje_pulsar_luna">Pulsa para revelar la imágen</p>
+        <p id="mensaje_luna" style="display:none">
+          En esta imágen vemos como estaban las estrellas y la luna la primera vez que nuestros caminos se encontraron.
+          <br>
+          <b>01 de agosto de 2024</b>
+          <br>
+          Nuestro comienzo, TE QUIERO
+        </p>
       </div>
       <button onclick="nextStep()">Siguiente</button>
+    </div>
+
+    <div class="step">
+      <div class="bear">🚘🏔️</div>
+      <h1>HISTORIA</h1>
+      <p>Mi niña, en realidad todo empezó hace 10 años jeje que loco pensar que el destino nos iba a juntar
+      todo este tiempo te he molestado y has sido mi crush jeje hasta que las casualidades de la vida nos hizo coincidir y miranos 
+      que suerte hemos tenido.
+      <br>
+      Laura alias la rica calidad quiero que sepas que te quiero mucho, que este tiempo junto a ti he aprendido mucho y siento que 
+      contigo soy mejor, me gusta hacer planes contigo, verte y el tiempo se me pasa volando a tu lado.
+      Ambos sabemos que no ha sido perfecto ni ha sido fácil, pero a quién le gusta lo fácil jeje 
+
+      <br>
+      Amor, este este san valentín aunque a lo mejor no te pueda ver quiero que sepas que eres muy importante para mi, 
+      lo llevas siendo mucho tiempo y quiero que sigamos creciendo juntos. A lo mejor esto inició hace 10 años y nos encontramos ese bonito 
+      1 de agosto de 2024 pero ahora en febrero de 2026 seguimos avanzando y eso me parece super bonito. Se que vamos a por mucho mas.
+      <br>
+      Te deseo un feliz día de el amor y la amistad porque aparte de mi reina eres mi amiga, te quiero mucho y siempre te voy a desear lo mejor.
+
+      </p>
+      <p>❣️​</p>
+      <button onclick="nextStep()">Continuar</button>
+    </div>
+
+    <div class="step">
+      <div class="bear">🐻‍❄️​🏔️​🐻</div>
+      <h1>NOSOTROS</h1>
+      
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img 
+                  src="./img_1.jpeg"
+                  style="width: 300px; border-radius: 15px"
+                />
+            </div>
+            <div class="carousel-item">                
+                <img 
+                  src="./img_2.jpeg"
+                  style="width: 300px; border-radius: 15px"
+                />
+            </div>
+            <div class="carousel-item">                
+                <img 
+                  src="./img_3.jpg"
+                  style="width: 300px; border-radius: 15px"
+                />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+      <p>Estas son algunas fotos que nos representan… nuestros lugares, nuestros gustos, nuestros momentos. 
+        Cada una guarda un pedacito de lo que somos juntos.</p>
+      <p>Espero de verdad que te haya gustado la sorpresa… y ya por último, solo me queda decirte algo muy importante: 
+        gracias por existir, ser como eres y estar conmigo cada día. <b>TE QUIERO MI BLANQUITA</b>🤍</p>
+      <button onclick="nextStep()">Continuar</button>
     </div>
 
     <!-- PASO 3 -->
     <div class="step">
       <div class="bear">🐻💌🐻</div>
       <div class="box">
-        <h2>¿Tienes una cita conmigo este lunes?</h2>
+        <h2>PROPUESTA INDECENTE</h2>
+        <p>por último:</p>
+        <p>¿Me aceptas una cita este Lunes 16 Febrero 2026?</p>
         <div class="buttons">
           <button onclick="accept()">💖 Sí 💖</button>
           <button id="no">No</button>
@@ -149,9 +234,9 @@
       <div class="box">
         <h2>Nuestra cita ✨</h2>
         📍 Restaurante especial 🍷<br />
-        📅 Lunes<br />
-        ⏰ 21:00<br /><br />
-        Te espero 💕
+        📅 Lunes 16<br />
+        ⏰ 21:15<br /><br />
+        Te quiero 💕
       </div>
     </div>
 
@@ -193,6 +278,13 @@
       function accept() {
         nextStep();
       }
+      /* quita filtro */
+      function fn_pulsa_foto_luna(){
+        document.getElementById("img_estrellas").classList.remove("img_estrellas");
+        document.getElementById("mensaje_pulsar_luna").style.display = "none"
+        document.getElementById("mensaje_luna").style.display = "block"
+      }
+
     </script>
   </body>
 </html>
